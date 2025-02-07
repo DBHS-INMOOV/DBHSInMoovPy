@@ -6,7 +6,7 @@ import csv
 cap = cv2.VideoCapture(0)
 
 FMD = FaceMeshDetector()
-class_name = 'remi'
+class_name = 'joshua'
 
 Columns = ['Class']
 for val in range(1,468+1):

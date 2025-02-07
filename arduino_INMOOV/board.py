@@ -21,6 +21,8 @@ class Board:
                 case _ : 
                     print(f"ERROR with pin {pin}")
 
+################################################################
+
     def eyeMechHorizontalTest(self):
 
         # Soft Max Ranges: 0 - 180
@@ -52,6 +54,34 @@ class Board:
         self.Jaw.write(90) # DOWN
         time.sleep(2)
 
+################################################################
+
+def eyeMechHorizontal(self, angle):
+
+    # Soft Max Ranges: 0 - 180
+
+    if (angle <= 180 and angle >= 0):
+        self.HorizontalEye.write(angle)
+    else:
+        print("ERROR: angle must be between 0 and 180")
+
+def jaw(self, angle):
+
+        # Soft Max Ranges: 0 - 40
+    
+    if (angle <= 40 and angle >= 0):
+        self.VerticalEye.write(angle)
+    else:
+        print("ERROR: angle must be between 0 and 40")
+
+def eyeMechVertical(self, angle):
+
+    # Soft Max Ranges: 90 - 160
+
+    if (angle <= 160 and angle >= 90):
+        self.Jaw.write(135)
+    else:
+        print("ERROR: angle must be between 90 and 160")
 
     # MAIN LOOP
     def run(self):
