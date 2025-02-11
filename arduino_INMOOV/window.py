@@ -16,7 +16,7 @@ TRACK_COLOR = (200, 200, 200)
 
 # Screen setup
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption('SKIBIDI-SIGMA DEBUGGING HUD')
+pygame.display.set_caption('BIG BOOM REMI DEBUGGING HUD')
 
 class Trackbar:
     def __init__(self, x, y, width, slider_pos, min_value, max_value, name):
@@ -92,7 +92,7 @@ def main():
                 # Stop dragging all trackbars when mouse button is released
                 for trackbar in trackbars:
                     trackbar.is_dragging = False
-                    match trackbar.name():
+                    match trackbar.name:
                         case "horizontal eye mech":
                             board.eyeMechHorizontal(trackbar.get_value())
                         case "vertical eye mech":
