@@ -5,21 +5,20 @@ import pins
 class Board:
     def __init__(self):
         self.board = pyfirmata2.Arduino('COM3')
-        self.board = pyfirmata2.Arduino('COM4')
         pyfirmata2.util.Iterator(self.board).start()
 
         for pin in pins.pins():
             self.board.digital[pin].mode = pyfirmata2.SERVO
 
-        match pin:
-            case pins.EYE_HORIZONTAL: 
-                self.HorizontalEye = self.board.digital[pin]
-            case pins.EYE_VERTICAL: 
-                self.VerticalEye = self.board.digital[pin]
-            case pins.JAW: 
-                self.Jaw = self.board.digital[pin]
-            case _: 
-                print(f"ERROR with pin {pin}")
+            match pin:
+                case pins.EYE_HORIZONTAL: 
+                    self.HorizontalEye = self.board.digital[pin]
+                case pins.EYE_VERTICAL: 
+                    self.VerticalEye = self.board.digital[pin]
+                case pins.JAW: 
+                    self.Jaw = self.board.digital[pin]
+                case _: 
+                    print(f"ERROR with pin {pin}")
 
     def eyeMechHorizontal(self, angle):
 

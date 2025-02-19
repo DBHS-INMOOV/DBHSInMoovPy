@@ -1,9 +1,8 @@
+from board import Board
+from Objects import Trackbar, Button
+
 import pygame
 import sys
-
-from board import Board
-
-from Objects import Trackbar, Button
 
 # Initialize Pygame
 pygame.init()
@@ -25,7 +24,7 @@ def main():
 
     #horizontalEyeMech = Trackbar(100, 25, 400, 0.5, 0, 180, "horizontal eye mech")
     #verticalEyeMech = Trackbar(100, 100, 400, 0.5, 90, 160, "vertical eye mech")
-    jawMech = Trackbar(100, 175, 400, 0, 0, 80, "jaw mech")
+    jawMech = Trackbar.Trackbar(100, 175, 400, 0, 0, 80, "jaw mech")
 
     # Create multiple trackbars
     trackbars = [
@@ -35,6 +34,12 @@ def main():
     ]
 
     objects = []
+
+    for i in trackbars:
+        objects.append(i)
+
+    for object in objects:
+        print(object.getName())
 
     currentAngle = 0
 
