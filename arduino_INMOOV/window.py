@@ -16,7 +16,7 @@ TRACK_COLOR = (200, 200, 200)
 
 # Screen setup
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption('SKIBIDI-SIGMA DEBUGGING HUD')
+pygame.display.set_caption('BIG BOOM REMI DEBUGGING HUD')
 
 def main():
     board = Board()
