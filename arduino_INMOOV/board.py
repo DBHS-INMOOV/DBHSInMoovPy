@@ -5,7 +5,7 @@ import pins
 class Board:
 
     def __init__(self):
-        self.board = pyfirmata2.Arduino('COM5')
+        self.board = pyfirmata2.Arduino('COM3')
         pyfirmata2.util.Iterator(self.board).start()
 
         for pin in pins.pins():
@@ -56,32 +56,36 @@ class Board:
 
 ################################################################
 
-def eyeMechHorizontal(self, angle):
+    def eyeMechHorizontal(self, angle):
 
-    # Soft Max Ranges: 0 - 180
+        # Soft Max Ranges: 0 - 180
 
-    if (angle <= 180 and angle >= 0):
-        self.HorizontalEye.write(angle)
-    else:
-        print("ERROR: angle must be between 0 and 180")
+        if (angle <= 180 and angle >= 0):
+            self.HorizontalEye.write(angle)
+        else:
+            print("ERROR: angle must be between 0 and 180")
 
-def jaw(self, angle):
+    def jaw(self, angle):
+        maxJawAngle = 80
 
-        # Soft Max Ranges: 0 - 40
-    
-    if (angle <= 40 and angle >= 0):
-        self.VerticalEye.write(angle)
-    else:
-        print("ERROR: angle must be between 0 and 40")
+            # Soft Max Ranges: 0 - 40
+        
+        if (angle <= maxJawAngle and angle >= 0):
+            self.Jaw.write(angle)
+            
+        else:
+            print("ERROR: angle must be between 0 and 40")
 
-def eyeMechVertical(self, angle):
 
-    # Soft Max Ranges: 90 - 160
+    def eyeMechVertical(self, angle):
 
-    if (angle <= 160 and angle >= 90):
-        self.Jaw.write(135)
-    else:
-        print("ERROR: angle must be between 90 and 160")
+        # Soft Max Ranges: 90 - 160
+
+        if (angle <= 160 and angle >= 90):
+            self.VerticalEye.write(angle)
+            print(angle)
+        else:
+            print("ERROR: angle must be between 90 and 160")
 
     # MAIN LOOP
     def run(self):
